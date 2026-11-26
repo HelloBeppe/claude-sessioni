@@ -14,7 +14,7 @@ jobs:
         shell: python3 {0}
         run: |
           import json, os, re, subprocess, sys
-          AMMESSI = {"README.md", ".claude/settings.json", ".github/workflows/controllo.yml", ".github/CODEOWNERS"}
+          AMMESSI = {"README.md", "CLAUDE.md", ".claude/settings.json", ".github/workflows/controllo.yml", ".github/CODEOWNERS"}
           file = subprocess.run(["git", "ls-files"], capture_output=True, text=True, check=True).stdout.split()
           errori = [f"file non ammesso: {f}" for f in file if f not in AMMESSI]
           SOSPETTI = [
